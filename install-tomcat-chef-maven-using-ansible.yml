@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: user
+  tasks:
+  - name: downloading tomcat
+    file: path=/tomcat state=directory
+
+  - name:  installing tomcat
+    shell:
+     chdir: /tomcat
+     cmd: wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.66/bin/apache-tomcat-8.5.66.tar.gz
+
+  - name: unzip tomcat
+    shell:
+     chdir: /tomcat
+     cmd: tar -xzvf apache-tomcat-8.5.66.tar.gz
+
+  - name: unzip apache-maven
+    shell:
+     chdir: /git
+     cmd: tar -xzvf apache-maven-3.6.3-bin.tar.gz
+
+  - name: unzip chefdk
+    shell:
+     chdir: /git
+     cmd: dpkg -i chefdk_4.13.3-1_amd64.deb ( # -i stands for install, isntalling chefdk )

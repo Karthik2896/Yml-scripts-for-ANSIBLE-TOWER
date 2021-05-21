@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: true
+  vars:
+       mul-pckgs:
+                - git
+                - apache2
+                - vsftpd
+                - openssh-server
+  tasks:
+          - name: creating a directory
+            file: dest=/opt/packgs state=directory
+
+          - name: changing directory
+            shell:
+                    cmd: chdir /opt/packgs
+
+          - name: installing pacakges
+            package: name="{{mul-pckgs}}" state=present
+            notify:
+                    - installing packages
+  handlers:
+          - name: installing packages
+            service: name="{{item}}" state=restarted
+            with_items:
+                  - git
+                  - apache2
+                  - vsftpd
+                  - sshd
