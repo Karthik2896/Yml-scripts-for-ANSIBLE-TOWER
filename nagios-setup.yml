@@ -17,4 +17,4 @@
     shell:
       cmd: cd /nagios
       cmd: wget https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
-      cmd: tar zxvf nagios-4.0.8.tar.gz
+      cmd: tar zxvf nagios-plugins-2.3.3.tar.gz
