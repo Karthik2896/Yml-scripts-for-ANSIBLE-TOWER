@@ -2,5 +2,5 @@
 - hosts: all
   become: true
   tasks:
-  - name: installing git
+   - name: installing git
     pacakage: name=git state=present
