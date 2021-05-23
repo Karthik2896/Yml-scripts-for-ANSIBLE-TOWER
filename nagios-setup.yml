@@ -18,4 +18,4 @@
       cmd: cd /nagios
       cmd: wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.0.8.tar.gz
       cmd: https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
-      cmd: tar zxvf nagios-4.0.8.tar.gz
+  
