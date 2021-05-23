@@ -5,8 +5,7 @@
      mult_packages:
           - apache2
           - php
-          - gcc glibc glibc-common
-          - gd gd-devel
+          
   tasks: 
   - name: installing multiple mult_packages
     package: name="{{mult_packages}}" state=present
