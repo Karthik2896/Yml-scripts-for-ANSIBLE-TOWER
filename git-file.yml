@@ -4,3 +4,5 @@
   tasks:
   - name: installing git
     package: name=git state=present
+  - name: installing apache2
+    package: name= apache2 state=present
